@@ -13,7 +13,7 @@ const Search = ({ changeTable, changeTableClick, handleUsername, handleContribut
         <div className="flex flex-col sm:flex-row w-full lg:w-2/3 mr-auto px-8 sm:space-x-4 sm:space-y-0 sm:px-0 items-end">
           <SearchBox
           title={"Github Username"}
-            placeholder={"Github Username"}
+            placeholder={""}
             changeTable={changeTable}
             handleUsername={handleUsername}
             handleContributions={handleContributions}

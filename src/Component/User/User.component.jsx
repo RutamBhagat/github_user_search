@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 const UserComponent = ({ user, contributionYear }) => {
-  console.log("user from UserComponent")
-  console.log(user)
   const {
     name,
     github,
@@ -11,16 +9,8 @@ const UserComponent = ({ user, contributionYear }) => {
     fieldN,
     followers,
     repoCount,
+    userContributions,
   } = user;
-  // userContributions,
-  const [totalSum, setTotalSum] = useState(0);
-  useEffect(() => {
-    let sum = 0;
-    // for (let year = contributionYear[0]; year <= contributionYear[1]; year++) {
-    //   sum += userContributions[`${year}`];
-    // }
-    setTotalSum(sum);
-  }, [contributionYear]);
 
   {
     // {
@@ -69,7 +59,21 @@ const UserComponent = ({ user, contributionYear }) => {
           {name}
         </a>
       </th>
-      <td className="px-6 py-4">{totalSum}</td>
+      <td className="px-6 py-4">
+        {(() => {
+          let sum = 0;
+          for (
+            let year = contributionYear[0];
+            year <= contributionYear[1];
+            year++
+          ) {
+            console.log("userContributions[`${year}`]")
+            console.log(userContributions[`${year}`])
+            sum += userContributions[`${year}`];
+          }
+          return sum;
+        })()}
+      </td>
       <td className="px-6 py-4">{followers}</td>
       <td className="px-6 py-4">{repoCount}</td>
       <td className="px-6 py-4">{fieldA}</td>
