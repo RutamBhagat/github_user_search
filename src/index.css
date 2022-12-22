@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card-zoom {
+    @apply relative flex items-center justify-center overflow-hidden rounded-r-2xl shadow-xl;
+  }
+
+  .card-zoom-image {
+    @apply absolute h-full w-full transform bg-cover bg-center transition-all duration-500 ease-in-out;
+  }
+
+  .card-zoom-text {
+    @apply absolute scale-150 transform text-7xl font-black text-gray-50 opacity-60 transition-all duration-500 ease-in-out;
+  }
+
+  .card-zoom:hover .card-zoom-image {
+    @apply scale-150;
+  }
+
+  .card-zoom:hover .card-zoom-text {
+    @apply scale-100;
+  }
+
+  * {
+    @apply bg-gray-800
+  }
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans Condensed", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+fieldset label span {
+  min-width: 125px;
+}
+fieldset .select::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  right: 20px;
+  top: 50%;
+  margin-top: -2px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'><title>Arrow</title><path d='M.552 0H8.45c.58 0 .723.359.324.795L5.228 4.672a.97.97 0 0 1-1.454 0L.228.795C-.174.355-.031 0 .552 0z' fill='%23CFD7DF' fill-rule='evenodd'/></svg>");
+  pointer-events: none;
+}
